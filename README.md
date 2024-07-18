@@ -7,7 +7,7 @@ Welcome to MovieApp, a comprehensive solution for managing and discovering movie
 ### Prerequisites
 
 Make sure you have the following installed:
-- [.NET Core SDK](https://dotnet.microsoft.com/download) (version 5.0 or later)
+- [.NET Core SDK](https://dotnet.microsoft.com/download) (version 8.0 or later)
 - [Git](https://git-scm.com/)
 
 ### Installation
