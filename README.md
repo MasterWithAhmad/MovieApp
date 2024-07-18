@@ -41,7 +41,8 @@ cd MovieApp
  ![Movie List](MovieApp/Screenshots/MovieList.png)
 ![Movies](MovieApp/Screenshots/Movies.png)
  ![Delete Movie](MovieApp/Screenshots/DeleteMovie.png)
- ## 🛠️ FeaturesManage Movies: 
+ ## 🛠️ Features
+ Manage Movies: 
 1. Easily add, edit, and delete movie records.
 2. Discover New Movies: Search and explore a wide range of movies.
 3. Track Your Favorites: Keep track of your favorite movies and ratings.
