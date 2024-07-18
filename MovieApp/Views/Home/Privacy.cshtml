@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<!-- Hero Section -->
+<div class="jumbotron jumbotron-fluid bg-dark text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-3">@ViewData["Title"]</h1>
+        <p class="lead">Your privacy matters to us. Read our policy to understand how we protect your information.</p>
+    </div>
+</div>
+
+<!-- Privacy Policy Content -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h2 class="mb-4">Introduction</h2>
+                    <p>We value your privacy and are committed to protecting your personal information. This privacy policy outlines how we collect, use, and safeguard your data when you visit our website.</p>
+
+                    <h2 class="mt-4 mb-4">Information We Collect</h2>
+                    <p>We may collect personal information such as your name, email address, and other details that you provide voluntarily. We also collect non-personal information such as your IP address and browser type to improve our website's performance and user experience.</p>
+
+                    <h2 class="mt-4 mb-4">How We Use Your Information</h2>
+                    <p>Your information helps us enhance your experience on our website, respond to your inquiries, and provide you with relevant content and services. We do not share your personal data with third parties without your consent.</p>
+
+                    <h2 class="mt-4 mb-4">Security</h2>
+                    <p>We implement industry-standard security measures to protect your information from unauthorized access, use, or disclosure. However, please be aware that no data transmission over the internet can be guaranteed to be completely secure.</p>
+
+                    <h2 class="mt-4 mb-4">Changes to This Policy</h2>
+                    <p>We may update this privacy policy from time to time. Any changes will be posted on this page, and your continued use of our website signifies your acceptance of the updated policy.</p>
+
+                    <h2 class="mt-4 mb-4">Contact Us</h2>
+                    <p>If you have any questions or concerns about our privacy policy, please contact us at [your contact information].</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

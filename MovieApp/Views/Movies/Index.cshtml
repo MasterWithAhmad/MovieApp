@@ -1,0 +1,89 @@
+﻿@model MovieApp.Models.MovieGenreViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Hero Section -->
+<div class="jumbotron jumbotron-fluid bg-primary text-white text-center py-2 border rounded">
+    <div class="container">
+        <h1 class="display-3">Movies Database</h1>
+        <p class="lead">Manage your movie collection with ease.</p>
+        <a asp-action="Create" class="btn btn-light btn-lg">
+            <i class="bi bi-plus-lg"></i> Create New Movie
+        </a>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <!-- Search and Filter Form -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <form asp-controller="Movies" asp-action="Index" method="get" class="p-4 border rounded shadow-sm bg-light">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <select asp-for="MovieGenre" asp-items="Model.Genres" class="form-control">                         
+                            <option value="">All Genres</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <input type="text" asp-for="SearchString" class="form-control" placeholder="Search by title" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <button type="submit" class="btn btn-primary w-20">                            
+                            <img src="icons/icons8_filter.ico" alt="Alternate Text" />Apply Filters
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Movies Table -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <table class="table table-bordered table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.Movies![0].Title)</th>
+                                <th>@Html.DisplayNameFor(model => model.Movies![0].ReleaseDate)</th>
+                                <th>@Html.DisplayNameFor(model => model.Movies![0].Genre)</th>
+                                <th>@Html.DisplayNameFor(model => model.Movies![0].Price)</th>
+                                <th>@Html.DisplayNameFor(model => model.Movies![0].Rating)</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Movies!)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.ReleaseDate)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Genre)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Rating)</td>
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">
+                                            <i class="bi bi-pencil"></i> Edit
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
